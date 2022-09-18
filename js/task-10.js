@@ -11,11 +11,11 @@ function createBoxes(amount) {
     amount = input.value;
 
     for (let i = 1; i <= amount; i += 1) {
-      boxes.insertAdjacentHTML("afterbegin", '<div class="box"></div>');
-      const box = document.querySelector(".box");
-      box.style.width = boxSize + i * 10 + "px";
-      box.style.height = boxSize + i * 10 + "px";
-      box.style.backgroundColor = getRandomHexColor();
+      const div = document.createElement("div");
+      boxes.append(div);
+      div.style.width = boxSize + i * 10 + "px";
+      div.style.height = boxSize + i * 10 + "px";
+      div.style.backgroundColor = getRandomHexColor();
     }
   } else {
   }
